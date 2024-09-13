@@ -3,6 +3,7 @@ using namespace std;
 
 // ---------------THE TIME COMPLEXITY OF THIS ALGO IS O(logN)
 
+
 // Function to compute (base^exp) % mod using iterative modular exponentiation
 long long modExpo(long long base, long long exp, long long mod) {
     long long result = 1;
