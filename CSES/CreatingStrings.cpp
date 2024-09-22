@@ -1,37 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void permutations(string str, vector<string>& ans, int start, int n) {
-    if (start == n) {
-        ans.push_back(str);  
-        return;
-    }
-    
-    for (int i = start; i < n; i++) {
-        swap(str[start], str[i]);  
-        permutations(str, ans, start + 1, n);  
-        swap(str[start], str[i]);  
-    }
+// function to generate all permutations of string S
+set<string> solve(string S)
+{
+    int N = S.length();
+    sort(S.begin(), S.end());
+
+    // set to store all the unique permutations
+    set<string> uniqueStrings;
+
+    do {
+        uniqueStrings.insert(S);
+    } while (next_permutation(S.begin(), S.end()));
+    return uniqueStrings;
 }
 
-void solve() {
-    string str;
-    cin >> str;
-    int n = str.length();
-    vector<string> ans;
+int main()
+{
+    // Sample Input
+    string S ;
+    cin>>S;
+    set<string> uniqueStrings = solve(S);
 
-    permutations(str, ans, 0, n);
-
-    cout << ans.size() << endl;
-
-    for (auto i : ans) {
-        cout << i << endl;
+    cout << uniqueStrings.size() << "\n";
+    for (string str : uniqueStrings) {
+        cout << str << "\n";
     }
-
-    return;
-}
-
-int main() {
-    solve();
-    return 0;
 }
