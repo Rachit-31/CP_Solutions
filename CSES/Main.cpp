@@ -1,16 +1,13 @@
-#include <bits/stdc++.h> // Includes most of the C++ Standard Library
-using namespace std;     // Avoids the need to prefix standard functions with 'std::'
+#include <bits/stdc++.h> 
+using namespace std;     
 
-// Defines 'int' as 'long long' for handling large numbers easily
 #define int long long        
 
 // Replaces 'endl' with '\n' for faster output (as 'endl' flushes output buffer)
 #define endl '\n'            
 
-// Macro for faster input and output
 #define fast_io() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL) 
 
-// Constants
 const int MOD = 1e9 + 7;      // For modular arithmetic
 const int INF = 1e18;         // A very large value used for initialization
 
@@ -33,7 +30,6 @@ int mod_mul(int a, int b, int m = MOD) {
 #ifndef ONLINE_JUDGE
 #define debug(x) cerr << #x <<" "; _print(x); cerr << endl;  // Macro to print debug information
 #else
-#define debug(x)  // Disable debug when running in an online judge
 #endif
 
 // Print functions for debugging various data types
@@ -90,26 +86,18 @@ template <class T> void _print(multiset <T> v) {
     cerr << "]";
 }
 
-// Main problem-solving function
+
 void solve() {
     // Logic for solving the specific problem goes here
 }
 
-// Main function
 int32_t main() {
-    fast_io();  // Enables fast input/output
-
-    // Enable file input/output for local testing
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);   
-    freopen("output.txt", "w", stdout); 
-    #endif
     
-    int t = 1;  // Number of test cases
-    cin >> t;   // Uncomment this line to read multiple test cases
+    int t;  
+    cin >> t;  
     while (t--) {
-        solve();  // Call the solve function for each test case
+        solve(); 
     }
 
-    return 0;  // Program ends successfully
+    return 0; 
 }

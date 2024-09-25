@@ -34,10 +34,11 @@ int main() {
                 global_shift -= 1;
             }
             
-            cout<<"---------------the result is---------------"<<endl;
+
             cout << current_max + global_shift << " ";
-            cout<<"---------------"<<endl;
+            
         }
+        cout<<"---------------"<<endl;
         
         cout << endl;
     }
