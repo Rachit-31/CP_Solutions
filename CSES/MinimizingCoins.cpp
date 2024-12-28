@@ -85,18 +85,53 @@ template <class T> void _print(multiset <T> v) {
     cerr << "]";
 }
 
+int func(int t, vector<int>& nums, vector<int>& dp) {
+    if (t == 0) {
+        return 0; 
+    }
+    if (t < 0) {
+        return INT_MAX; 
+    }
+    if (dp[t] != -1) {
+        return dp[t];
+    }
+
+    int ans = INT_MAX;
+    for (int i = 0; i < nums.size(); i++) {
+        int res = func(t - nums[i], nums, dp);
+        if (res != INT_MAX) { 
+            ans = min(ans, 1 + res);
+        }
+    }
+
+    return dp[t] = ans; 
+}
 
 void solve() {
+    int n, x;
+    cin >> n >> x;
+
+    vector<int> nums(n);
+    for (int i = 0; i < n; i++) {
+        cin >> nums[i];
+    }
+
+    vector<int> dp(x + 1, -1);
+    int result = func(x, nums, dp);
+
     
+    if (result == INT_MAX) {
+        cout << -1 << endl; 
+    } else {
+        cout << result << endl;
+    }
 }
 
 int32_t main() {
     
-    int t;  
-    cin >> t;  
-    while (t--) {
+   
         solve(); 
-    }
+    
 
     return 0; 
 }
