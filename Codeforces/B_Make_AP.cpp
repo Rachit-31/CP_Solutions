@@ -9,6 +9,7 @@ using namespace std;
 #define rall(v) v.rbegin(),v.rend()
 #define sz(a) (int)a.size()
 #define pii pair<int, int>
+#define pci pair<char, int>
 #define vi vector<int>
 #define mi map<int, int>
 #define umi unordered_map<int, int>
