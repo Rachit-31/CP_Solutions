@@ -20,6 +20,8 @@ using namespace std;
 #define cf(i,s,e) for(int i=s;i<=e;i++)
 #define rf(i,e,s) for(int i=e-1;i>=s;i--)
 #define pb push_back
+#define in cin >>
+#define out cout <<
 
 const int MOD = 1e9 + 7;      
 const int INF = 1e18;  
