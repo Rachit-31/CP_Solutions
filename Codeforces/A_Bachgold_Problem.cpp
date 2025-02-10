@@ -28,35 +28,48 @@ const int INF = 1e18;
 
 int gcd(int a,int b) { if (b==0) return a; return gcd(b, a%b); }
 int lcm(int a,int b) { return a/gcd(a,b)*b; }
-bool prime(int n){
-    if (n < 2)
-        return false;
-    for (int x = 2; x * x <= n; x++){
-        if (n % x == 0)
-            return false;
-    }
-    return true;
-}
+
+void yes() { cout<<"YES\n"; }
+void no() { cout<<"NO\n"; }
 void print(vi &v){
     f(i,0,v.size()){
         cout<<v[i]<<" ";
     }
 }
-
-void yes() { cout<<"YES\n"; }
-void no() { cout<<"NO\n"; }
-
+void even(vi &v, int n){
+    while (n>0)
+    {
+        v.pb(2);
+        n -= 2;
+    }
+}
 void solve() {
-    
+    int n;
+    in n;
+    vi ans;
+
+    if(n%2==0){
+        even(ans, n);
+        out ans.size() nl;
+        print(ans);
+
+        return;
+    }
+    else{
+        n -= 3;
+        even(ans, n);
+        ans.pb(3);
+        out ans.size() nl;
+        print(ans);
+    }
+
 }
 
 int32_t main() {
     fast_io();
-    int t;  
-    cin >> t;  
-    while (t--) {
-        solve(); 
-    }
+    
+    solve(); 
+    
 
     return 0; 
 }
