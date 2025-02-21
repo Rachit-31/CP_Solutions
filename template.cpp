@@ -5,11 +5,16 @@ using namespace std;
 #define nl <<'\n'           
 
 #define fast_io() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL) 
-#define all(v) v.begin(), v.end()
-#define rall(v) v.rbegin(),v.rend()
 #define sz(a) (int)a.size()
 #define pii pair<int, int>
+
 #define vi vector<int>
+#define vc vector<char>
+#define vs vector<string>
+#define vb vector<bool>
+
+#define all(v) v.begin(), v.end()
+#define rall(v) v.rbegin(),v.rend()
 #define mi map<int, int>
 #define umi unordered_map<int, int>
 #define si set<int>
@@ -37,7 +42,17 @@ bool prime(int n){
     }
     return true;
 }
-void print(vi &v){
+void printi(vi &v){
+    f(i,0,v.size()){
+        cout<<v[i]<<" ";
+    }
+}
+void printc(vc &v){
+    f(i,0,v.size()){
+        cout<<v[i]<<" ";
+    }
+}
+void prints(vs &v){
     f(i,0,v.size()){
         cout<<v[i]<<" ";
     }
