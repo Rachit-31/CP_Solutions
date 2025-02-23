@@ -46,15 +46,37 @@ void printi(vi &v){
     f(i,0,v.size()){
         cout<<v[i]<<" ";
     }
+    cout<<endl;
 }
 void printc(vc &v){
     f(i,0,v.size()){
         cout<<v[i]<<" ";
     }
+    cout<<endl;
 }
 void prints(vs &v){
     f(i,0,v.size()){
         cout<<v[i]<<" ";
+    }
+    cout<<endl;
+}
+
+void ivi(vi &v){
+    int n = v.size();
+    f(i,0,n){
+        in v[i];
+    }
+}
+void ivc(vc &v){
+    int n = v.size();
+    f(i,0,n){
+        in v[i];
+    }
+}
+void ivs(vs &v){
+    int n = v.size();
+    f(i,0,n){
+        in v[i];
     }
 }
 
