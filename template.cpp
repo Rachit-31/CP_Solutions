@@ -17,6 +17,8 @@ using namespace std;
 #define rall(v) v.rbegin(),v.rend()
 #define mi map<int, int>
 #define umi unordered_map<int, int>
+#define umc unordered_map<char, int>
+#define ums unordered_map<string, int>
 #define si set<int>
 #define sc set<char>
 
