@@ -85,8 +85,57 @@ void ivs(vs &v){
 void yes() { cout<<"YES\n"; }
 void no() { cout<<"NO\n"; }
 
+int nextGreater(int i, vi &nums){
+    int n = nums.size();
+    int s=0, e=n-1;
+    int ans =0;
+    while(s<=e){
+        int mid = s+(e-s)/2;
+
+        if(nums[mid] >= i){
+            ans = nums[mid];
+            e = mid-1;
+        }
+        else{
+            s = mid+1;
+        }
+    }
+
+    return ans;
+}
 void solve() {
+    int n;
+    in n;
+    char c;
+    in c;
+    string s;
+    in s;
+    string s1 = s+s;
     
+    vi v;
+    int n1 = s1.length();
+    f(i,0,n1){
+        if(s1[i] == 'g'){
+            v.pb(i);                        //O(2n)
+        }
+    }
+    int ans = -1;
+    int x = v.size();
+    f(i,0,n){
+        char ch = s[i];
+        if(ch == c){
+            int idx = nextGreater(i, v);
+            // out "at every iteration idx is"<<idx nl;
+
+                                            //O(n*log(x))
+            ans = max(ans, idx-i);
+        }
+    }
+
+    // o(2*n)+O(n*log(v.size()))
+    //O(nlogn)
+    out ans nl;
+
 }
 
 int32_t main() {
@@ -96,7 +145,6 @@ int32_t main() {
     while (t--) {
         solve(); 
     }
-
     // solve();
 
     return 0; 
