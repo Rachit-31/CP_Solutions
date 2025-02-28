@@ -44,19 +44,19 @@ bool prime(int n){
     }
     return true;
 }
-void printi(vi &v){
+void ovi(vi &v){
     f(i,0,v.size()){
         cout<<v[i]<<" ";
     }
     cout<<endl;
 }
-void printc(vc &v){
+void ovc(vc &v){
     f(i,0,v.size()){
         cout<<v[i]<<" ";
     }
     cout<<endl;
 }
-void prints(vs &v){
+void ovs(vs &v){
     f(i,0,v.size()){
         cout<<v[i]<<" ";
     }
