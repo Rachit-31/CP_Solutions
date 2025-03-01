@@ -89,10 +89,27 @@ void solve() {
     int n, x;
     in n;
     in x;
-    vi v(n);
-    ivi(v);
+    vi a(n);
+    ivi(a);
 
-    
+    int left = a[0]-x;
+    int right = a[0] +x;
+    int ans =0;
+    f(i,1,n){
+        int newleft = a[i] -x;
+        int newright = a[i] +x;
+        if(newleft > right || newright < left){
+            ++ans;
+            left = newleft;
+            right = newright;
+        }else{
+            left = max(left, newleft);
+            right = min(right, newright);
+        }
+    }
+
+
+    out ans nl;
 }
 
 int32_t main() {
