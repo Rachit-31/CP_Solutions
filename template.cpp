@@ -25,7 +25,7 @@ using namespace std;
 // functions
 #define f(i,s,e) for(int i=s;i<e;i++)
 #define cf(i,s,e) for(int i=s;i<=e;i++)
-#define rf(i,e,s) for(int i=e-1;i>=s;i--)
+#define rf(i,e,s) for(int i=e;i>=s;i--)
 #define pb push_back
 #define in cin >>
 #define out cout <<
