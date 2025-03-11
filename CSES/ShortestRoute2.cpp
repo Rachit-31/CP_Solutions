@@ -1,103 +1,51 @@
-#include <bits/stdc++.h> 
-using namespace std;     
+#include <bits/stdc++.h>
+using namespace std;
 
-#define int long long        
-
-
-#define endl '\n'            
-
-#define fast_io() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL) 
-
-const int MOD = 1e9 + 7;      
-const int INF = 1e18;         
-
-
-int mod_add(int a, int b, int m = MOD) { 
-    return ((a % m) + (b % m)) % m; 
-}
-
-int mod_sub(int a, int b, int m = MOD) { 
-    return ((a % m) - (b % m) + m) % m; 
-}
-
-int mod_mul(int a, int b, int m = MOD) { 
-    return ((a % m) * (b % m)) % m; 
-}
-
-
-#ifndef ONLINE_JUDGE
-#define debug(x) cerr << #x <<" "; _print(x); cerr << endl;  
-#else
-#endif
-
-void _print(int t) {cerr << t;}
-void _print(string t) {cerr << t;}
-void _print(char t) {cerr << t;}
-void _print(double t) {cerr << t;}
-
-template <class T, class V> void _print(pair <T, V> p);
-template <class T> void _print(vector <T> v);
-template <class T> void _print(set <T> v);
-template <class T, class V> void _print(map <T, V> v);
-template <class T> void _print(multiset <T> v);
-
-// Template to print a pair
-template <class T, class V> void _print(pair <T, V> p) {
-    cerr << "{"; _print(p.first); cerr << ","; _print(p.second); cerr << "}";
-}
-
-// Template to print a vector
-template <class T> void _print(vector <T> v) {
-    cerr << "[ "; 
-    for (T i : v) {
-        _print(i); cerr << " ";
-    } 
-    cerr << "]";
-}
-
-// Template to print a set
-template <class T> void _print(set <T> v) {
-    cerr << "[ "; 
-    for (T i : v) {
-        _print(i); cerr << " ";
-    } 
-    cerr << "]";
-}
-
-// Template to print a map
-template <class T, class V> void _print(map <T, V> v) {
-    cerr << "[ "; 
-    for (auto i : v) {
-        _print(i); cerr << " ";
-    } 
-    cerr << "]";
-}
-
-// Template to print a multiset
-template <class T> void _print(multiset <T> v) {
-    cerr << "[ "; 
-    for (T i : v) {
-        _print(i); cerr << " ";
-    } 
-    cerr << "]";
-}
-
+#define int long long
+#define INF 1e18
 
 void solve() {
     int n, m, q;
-    cin>>n;
-    cin>>m;
-    cin>>q;
-    
+    cin >> n >> m >> q;
+
+    // Initialize distance matrix with INF
+    vector<vector<int>> dist(n + 1, vector<int>(n + 1, INF));
+
+    // Distance to itself is 0
+    for (int i = 1; i <= n; i++) dist[i][i] = 0;
+
+    // Read edges
+    for (int i = 0; i < m; i++) {
+        int a, b, c;
+        cin >> a >> b >> c;
+        // Since multiple edges can exist, store the minimum weight
+        dist[a][b] = min(dist[a][b], c);
+        dist[b][a] = min(dist[b][a], c);
+    }
+
+    // **Floyd-Warshall Algorithm** to compute shortest paths
+    for (int k = 1; k <= n; k++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (dist[i][k] < INF && dist[k][j] < INF) {
+                    dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+                }
+            }
+        }
+    }
+
+    // Process Queries in O(1)
+    while (q--) {
+        int a, b;
+        cin >> a >> b;
+        cout << (dist[a][b] == INF ? -1 : dist[a][b]) << '\n';
+    }
 }
 
 int32_t main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     
-    int t;  
-    cin >> t;  
-    while (t--) {
-        solve(); 
-    }
-
-    return 0; 
+    solve();
+    return 0;
 }
