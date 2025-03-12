@@ -27,6 +27,8 @@ using namespace std;
 #define cf(i,s,e) for(int i=s;i<=e;i++)
 #define rf(i,e,s) for(int i=e;i>=s;i--)
 #define pb push_back
+#define F first
+#define S second
 #define in cin >>
 #define out cout <<
 
