@@ -1,4 +1,4 @@
-# DSA Repository 📚
+# DSA Repository 
 
 This repository contains my solutions to problems from **Codeforces**, **Atcoder**, and **CSES**.
 
