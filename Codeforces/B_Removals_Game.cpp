@@ -90,7 +90,26 @@ void yes() { cout<<"YES\n"; }
 void no() { cout<<"NO\n"; }
 
 void solve() {
-    
+    int n;
+    in n;
+    vi a(n);
+    vi b(n);
+    ivi(a);
+    ivi(b);
+
+
+    if(a==b){
+        out "Bob" nl;
+        return;
+    }
+
+    reverse(all(b));
+    if(a==b){
+        out "Bob" nl;
+        return;
+    }
+
+    out "Alice" nl;
 }
 
 int32_t main() {
